@@ -41,3 +41,36 @@
 .name {
   color: #f00
 }
+
+.addTask{
+  background: lightskyblue;
+  padding: 30px 0;
+}
+
+.tarefa-container{
+  background: lightyellow;
+  padding: 3px;
+  margin: 3px;
+}
+.tarefa-container p{
+  margin: 1px;
+}
+
+.click-deletar{
+  display: inline-block;
+  padding: 1px 5px;
+  margin: 1px 5px;
+  background: lightcoral;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.click-complete{
+  display: inline-block;
+  padding: 1px 5px;
+  margin: 1px 5px;
+  background: lightslategrey;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+}
