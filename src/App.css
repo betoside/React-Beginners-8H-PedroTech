@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .App-logo {
@@ -73,4 +74,18 @@
   color: #fff;
   cursor: pointer;
   border-radius: 2px;
+}
+
+.exe6-box{
+  padding: 10px;
+  margin: 10px;
+  background: deepskyblue;
+}
+
+.exe6-box input{
+  border: 1px solid dodgerblue;
+  border-radius: 3px;
+  padding: 3px 6px;
+  margin: 10px;
+  text-align: center;
 }
