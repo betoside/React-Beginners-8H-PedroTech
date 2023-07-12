@@ -1,25 +1,33 @@
 import './App.css';
-import { PlanetsComponent } from './PlanetsComponent';
+import { useState } from 'react';
 
 function App() {
 
-  const planets = [
-    { name: 'Mars', isGasPlanet: false },
-    { name: 'Earth', isGasPlanet: false },
-    { name: 'Jupiter', isGasPlanet: true },
-    { name: 'Venus', isGasPlanet: false },
-    { name: 'Neptune', isGasPlanet: true },
-    { name: 'Uranus', isGasPlanet: true }
-  ]; 
+  const [count, setCount] = useState(0);
+
+  const handleSomar = ()=>{
+    setCount(count+1);
+  }
+  const handleZerar = ()=>{
+    setCount(0);
+  }
+  const handleDiminuir = ()=>{
+    {count > 0 && setCount(count-1)}
+  }
+
 
   return (
     <div className="App">
-
-      {planets.map((planeta, key) => (
-        <PlanetsComponent name={planeta.name} isGasPlanet={planeta.isGasPlanet} />
-        
-      ) )}
       
+      <p>{count}</p>
+
+      <div>
+        <button onClick={handleSomar}>Increase</button>
+        <button onClick={handleZerar}>zerar</button>
+        <button onClick={handleDiminuir}>Decrease</button>
+      </div>
+
+
     </div>
   );
 }
