@@ -89,3 +89,33 @@
   margin: 10px;
   text-align: center;
 }
+
+
+.generateExcuse button {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.desculpa{
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 300px;
+  background: chocolate;
+}
+
+.desculpa div {
+  margin-bottom: 6px;
+}
+.desculpa .id{
+  font-size: 12px;
+  color: #000;
+}
+.desculpa .excuse{
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.desculpa .category{
+  font-size: 13px;
+  color: black;
+}
