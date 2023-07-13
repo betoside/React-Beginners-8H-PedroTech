@@ -4,30 +4,31 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [catFact, setCatFact] = useState('');
+  // const toolAPI = 'https://jsonplaceholder.typicode.com/posts';
+  // const toolAPI = 'https://catfact.ninja/fact';
+  const toolAPI = 'https://api.agify.io/?name=';
 
-  // const toolJson = 'https://jsonplaceholder.typicode.com/posts';
-  const toolJson = 'https://catfact.ninja/fact';
+  const [name, setName] = useState("");
+  const [predictAge, setPredictAge] = useState(null);
 
-  const fetchCatFact = () => {
-    Axios.get(toolJson).then((res) => {
-      setCatFact(res.data.fact);
-    });
+  const fetchData = (nome) => {
+    Axios.get(toolAPI+name).then((res)=>{
+      setPredictAge(res.data);
+    })
   };
-
-  useEffect(()=>{
-    Axios.get(toolJson).then((res) => {
-      setCatFact(res.data.fact);
-    });
-  }, []);
-
 
   return (
     <div className="App">
-
-      <button onClick={fetchCatFact}>Generate Cat Fact</button>
-      <p>{catFact}</p>
-
+      <input 
+        type="text" 
+        placeholder='Ex. Pedro...'
+        onChange={(event) => {setName(event.target.value)}} />
+      <br />
+      <br />
+      <button onClick={fetchData}>Predict Age</button>
+      <p>Name: {predictAge?.name}</p>
+      <p>Age: {predictAge?.age}</p>
+      <p>Count: {predictAge?.count}</p>
     </div>
   );
 }
