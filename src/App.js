@@ -5,47 +5,27 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { Contact } from './pages/Contact';
 import { Navbar } from './Navbar';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-export const AppContext = createContext();
+// export const AppContext = createContext();
 
 function App() {
+
+  const client = new QueryClient({
+      defaultOptions: {
+        queries: {
+          refetchOnWindowFocus: false,
+        }
+      }
+    }
+  );
   
-  const [username, setUsername] = useState('Betoside');
- 
-  const TopComponent = () => {
-    const [state, setState] = useState();
-    return(
-      <div>
-        <MiddleComponent state={state} />
-      </div>
-    );
-  };
-
-// objbanner = document.querySelector('#showroom')
-{/* <section id=​"showroom" class=​"Cek21w">​…​</section>​ */}
-
-// objbanner.style.display = 'none'
-
-  const MiddleComponent = (state) => {
-    return(
-      <div>
-        <BottomComponent state={state} />
-      </div>
-    );
-  };
-  
-  const BottomComponent = (state) => {
-    return(
-      <div>
-        {state}
-      </div>
-    );
-  };
-
+  // const [username, setUsername] = useState('Betoside');
 
   return (
     <div className="App">
-      <AppContext.Provider value={{username, setUsername}}>
+      {/* <AppContext.Provider value={{username, setUsername}}> */}
+      <QueryClientProvider client={client}>
         <Router>
           <Navbar />
           <Routes>
@@ -55,9 +35,8 @@ function App() {
             <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
           </Routes>
         </Router>
-      </AppContext.Provider>
-
-      
+      </QueryClientProvider>
+      {/* </AppContext.Provider> */}
     </div>
   );
   
