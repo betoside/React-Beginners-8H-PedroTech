@@ -123,3 +123,7 @@
 .erros{
   color: #f00;
 }
+
+.text-left {
+  text-align-last: left;
+}

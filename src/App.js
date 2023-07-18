@@ -1,20 +1,19 @@
 import './App.css';
-import { Cat } from "./components/Cat";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useCount } from "./useCount";
+import { Person } from "./components/Person";
 
 function App() {
 
-  const { count, increase, decrease, restart } = useCount();
 
   return (
-    <div className="App">
+    <div className="App text-left">
 
-      {count}
-      <br />
-      <button onClick={increase}>increase</button>
-      <button onClick={decrease}>decrease</button>
-      <button onClick={restart}>restart</button>
+      <Person 
+        name='Pedro'
+        email='email@pedro.com'
+        age={21}
+        isMarried={true}
+        friends={['Gordão', 'Mark Fish', 'Pixoxó', 'Elias', 'João']}
+      />
 
     </div>
   );
